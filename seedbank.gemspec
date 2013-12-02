@@ -5,7 +5,8 @@ require "seedbank/version"
 Gem::Specification.new do |s|
   s.name = %q{seedbank}
   s.version = Seedbank::VERSION
-  s.date = `git log -1 --format="%cd" --date=short lib/seedbank/version.rb`
+  #s.date = `git log -1 --format="%cd" --date=short lib/seedbank/version.rb`
+  s.date = %q{2013-12-02}
 
   s.required_rubygems_version = Gem::Requirement.new(">=1.2.0") if s.respond_to?(:required_rubygems_version=)
   s.rubygems_version = %q{1.3.5}
@@ -24,9 +25,10 @@ Gem::Specification.new do |s|
   }
   s.license = "MIT"
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  #s.files         = `git ls-files`.split("\n")
+  #s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  #s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.files = Dir.glob('**/*') - Dir.glob('seedbank*.gem')
   s.require_paths = ["lib"]
 
   s.rdoc_options = ["--charset=UTF-8"]
